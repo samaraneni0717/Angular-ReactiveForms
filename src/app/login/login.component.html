@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Login
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group" [ngClass]="{ 'has-error':(loginForm.get('userName').touched ||loginForm.get('userName').dirty) &&
+                                !loginForm.get('userName').valid}">
+                <label class="col-md-2 control-label">USER NAME </label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" formControlName="userName">
+                    <span class="help-block" *ngIf="(loginForm.get('userName').touched ||loginForm.get('userName').dirty) && 
+                loginForm.get('userName').errors">
+                        <span *ngIf="loginForm.get('userName').errors.required">
+                            Please enter User Name
+
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="form-group" [ngClass]="{ 'has-error':(loginForm.get('password').touched ||loginForm.get('password').dirty) &&
+            !loginForm.get('password').valid}">
+                <label for="passwordID" class="col-md-2 control-label">PASSWORD</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" formControlName='password'>
+                    <span class="help-block" *ngIf="(loginForm.get('password').touched ||loginForm.get('password').dirty) && 
+                    loginForm.get('password').errors">
+                    <span *ngIf="loginForm.get('password').errors.required">
+                        Please enter Password
+
+                    </span>
+                    </span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="float: right;margin-right:15px;" type="button" (click)="onSubmit()">SUBMIT</button>
+          
+        </form>
+    </div>
+</div>
