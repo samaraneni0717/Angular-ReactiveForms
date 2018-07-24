@@ -22,7 +22,7 @@
             !loginForm.get('password').valid}">
                 <label for="passwordID" class="col-md-2 control-label">PASSWORD</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" formControlName='password'>
+                    <input type="password" class="form-control" formControlName='password'>
                     <span class="help-block" *ngIf="(loginForm.get('password').touched ||loginForm.get('password').dirty) && 
                     loginForm.get('password').errors">
                     <span *ngIf="loginForm.get('password').errors.required">

@@ -1,0 +1,82 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        SignUp
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <!-- the firstName property gets added to the displayMessage object only incase of error -->
+            <div class="form-group" [ngClass]="{'has-error':displayMessage?.firstName}">
+                <label class="col-md-2 control-label" for="firstNameId">FIRST NAME</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" formControlName="firstName" autocomplete="nope">
+                    <span class="help-block" *ngIf="displayMessage?.firstName">
+                        {{displayMessage.firstName}}
+
+                    </span>
+                </div>
+
+
+            </div>
+            <div class="form-group" [ngClass]="{'has-error':displayMessage?.lastName}">
+                <label class="col-md-2 control-label" for="lastNameId">LAST NAME</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" formControlName="lastName" autocomplete="nope">
+                    <span class="help-block" *ngIf="displayMessage?.lastName">
+                        {{displayMessage.lastName}}
+                    </span>
+
+                </div>
+            </div>
+            <div formGroupName="emailGroup">
+                <div class="form-group" [ngClass]="{'has-error':displayMessage?.email}">
+                    <label class="col-md-2 control-label" for='emailId'>EMAIL</label>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" formControlName="email" autocomplete="nope">
+                        <span class="help-block" *ngIf="displayMessage?.email">
+                            {{displayMessage.email}}
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error':displayMessage?.confirmEmail}">
+                    <label class="col-md-2 control-label" for='emailId'>CONFIRM EMAIL</label>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" formControlName="confirmEmail" autocomplete="nope">
+                        <span class="help-block" *ngIf="displayMessage?.confirmEmail">
+                            {{displayMessage.confirmEmail}}
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phoneId" class="col-md-2 control-label">PHONE</label>
+                <div class="col-md-6">
+                    <input type="number" class="form-control" formControlName="phone" autocomplete="nope">
+
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label for='notificationId' class="col-md-2 control-label">Send notification via</label>
+                <div class="col-md-8">
+                    <label class="radio-inline">
+                        <input type="radio" formControlName="notification" value="email" (click)="setRadioOption('email')">Email
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" formControlName="notification" value="text" (click)="setRadioOption('text')">Phone
+                    </label>
+                </div>
+            </div>
+
+            <button type="button" style="float: right;" (click)="resetForm()">RESET</button>
+            <button type="button" class="btn-secondary" style="float: right; margin-right: 10px;" (click)="populateData()">TEST DATA</button>
+            <button type="button" class="btn-primary" style="float: right;margin-right:15px;" [disabled]=!signupForm.valid [style.background]>SUBMIT</button>
+
+
+        </form>
+    </div>
+
+</div>
+<p>{{signupForm.value | json}}</p>
