@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
 import { SignupModule } from './signup/signup.module';
 
 @NgModule({
   declarations: [
-    AppComponent,LoginComponent
+    AppComponent, LoginComponent
   ],
   imports: [
     BrowserModule,

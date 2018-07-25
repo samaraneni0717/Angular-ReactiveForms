@@ -15,11 +15,7 @@
       "severity": "warn"
     },
     "eofline": true,
-    "forin": true,
-    "import-blacklist": [
-      true,
-      "rxjs/Rx"
-    ],
+    "forin": true,  
     "import-spacing": true,
     "indent": [
       true,

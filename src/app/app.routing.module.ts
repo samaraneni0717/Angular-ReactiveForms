@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
-const routes:Routes =[{path:'login',component:LoginComponent},
-{path:'signup',component:SignupComponent},
-{path:'', redirectTo:'/login',pathMatch:'full'}];
+const routes: Routes = [{path: 'login', component: LoginComponent},
+{path: 'signup', component: SignupComponent},
+{path: '', redirectTo: '/login', pathMatch: 'full'}];
 @NgModule({
-    imports:[RouterModule.forRoot(routes)],
-    exports:[RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule{
-    
+export class AppRoutingModule {
+
 }
