@@ -1,11 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { SignupComponent } from './signup.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-
+import { SharedModule } from '../shared/shared-module';
 
 @NgModule({
-    imports: [ReactiveFormsModule, CommonModule],
+    imports: [SharedModule],
     declarations: [SignupComponent]
 })
 export class SignupModule {

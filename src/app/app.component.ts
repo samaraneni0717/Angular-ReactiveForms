@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   <ul class='nav navbar-nav'>
           <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/login']">Login</a></li>
           <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/signup']"> SignUp</a></li>
+          <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/controls']"> CustomControls</a></li>
         </ul>
         </div>
         </nav>

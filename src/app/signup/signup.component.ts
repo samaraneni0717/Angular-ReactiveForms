@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChildren, AfterViewInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup, FormControlName, AbstractControl } from '@angular/forms';
 import { GenericValidator } from '../shared/generic-validator';
-import { Observable, fromEvent, pipe,merge } from 'rxjs';
+import { Observable, fromEvent, merge } from 'rxjs';
 
 import { debounceTime } from 'rxjs/operators';
 
@@ -73,7 +73,8 @@ export class SignupComponent implements OnInit, AfterViewInit {
             .map((formControl: ElementRef) => fromEvent(formControl.nativeElement, 'blur'));
         console.log('controls', controlBlurs);
         // Merge the blur event observable with the valueChanges observable
-        this.signupForm.valueChanges,merge(...controlBlurs).pipe(debounceTime(800)).subscribe(value => {
+        // tslint:disable-next-line:no-unused-expression
+        this.signupForm.valueChanges, merge(...controlBlurs).pipe(debounceTime(800)).subscribe(value => {
             this.displayMessage = this.genericValidator.processMessages(this.signupForm);
             console.log('the display message is', this.displayMessage.firstName);
         });
