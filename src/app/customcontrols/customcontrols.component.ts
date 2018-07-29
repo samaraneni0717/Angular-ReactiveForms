@@ -4,7 +4,8 @@ import {Component} from '@angular/core';
     template: `
     <form #customForm = "ngForm">
     <sa-rating-input name="rating" [ngModel]="starValue"></sa-rating-input> <br><br><br>
-    <sa-counter name="counter" [ngModel]='outerCounterValue'></sa-counter>
+    <sa-counter name="counter" [ngModel]='outerCounterValue'></sa-counter><br><br><br>
+    <sa-password name="password" [ngModel]='pwdValue' [disabled]="false"></sa-password>
     <p>Form Status: {{customForm.status | json}}</p>
     <p>Form Pristine: {{customForm.pristine | json}}</p>
     <p>Form Dirty: {{customForm.dirty | json}}</p>
@@ -14,4 +15,5 @@ import {Component} from '@angular/core';
 export class CustomcontrolsComponent {
     outerCounterValue = 5;
     starValue: any;
+    pwdValue: string;
 }
